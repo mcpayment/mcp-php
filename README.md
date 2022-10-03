@@ -37,6 +37,8 @@ and run `composer install` on your terminal.
 
 See `.env.example` for your env settings reference on your app. Then set it up for your headers's requests as below:
 ```
+use MCPhp\Mcp;
+
 Mcp::setApiEnv(env('MCP_ENV'));
 Mcp::setMerchantId(env('MCP_MERCHANT_INDEX'));
 Mcp::setSecretUnboundId(env('MCP_SECRET_UNBOUND_ID'));
