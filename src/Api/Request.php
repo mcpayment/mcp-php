@@ -1,0 +1,85 @@
+<?php
+
+/**
+ * Request.php
+ * php version 7.2.0
+ *
+ * @category Trait
+ * @package  MCPhp\Api
+ * @author   Mahendra <mahendra@mcpayment.co.id>
+ * @license  https://opensource.org/licenses/MIT MIT License
+ * @link     https://developer.mcpayment.id
+ */
+
+namespace MCPhp\Api;
+
+use MCPhp\Exceptions\InvalidArgumentException;
+
+trait Request
+{
+    /**
+     * Parameters validation
+     *
+     * @param array $params         user's parameters
+     * @param array $requiredParams required parameters
+     *
+     * @return void
+     */
+    protected static function validateParams($params = [], $requiredParams = [])
+    {
+        $currParams = array_diff_key(array_flip($requiredParams), $params);
+
+        if ($params && !is_array($params)) {
+            $message = "You must pass an array as params.";
+            throw new InvalidArgumentException($message);
+        }
+        if (count($currParams) > 0) {
+            $message = "You must pass required body/parameters on your params. "
+            . "Check https://developer.mcpayment.id/ for more information.";
+            throw new InvalidArgumentException($message);
+        }
+    }
+
+    /**
+     * Send request to Api Requestor
+     *
+     * @param $method string
+     * @param $url    string ext url to the API
+     * @param $params array parameters
+     *
+     * @return array
+     * @throws \MCPhp\Exceptions\ApiException
+     */
+    // protected static function _request($method, $url, $params = [])
+    // {
+    //     $headers = [];
+
+    //     if (array_key_exists('for-user-id', $params)) {
+    //         $headers['for-user-id'] = $params['for-user-id'];
+    //     }
+
+    //     if (array_key_exists('with-fee-rule', $params)) {
+    //         $headers['with-fee-rule'] = $params['with-fee-rule'];
+    //     }
+
+    //     if (array_key_exists('Idempotency-key', $params)) {
+    //         $headers['Idempotency-key'] = $params['Idempotency-key'];
+    //     }
+
+    //     if (array_key_exists('X-IDEMPOTENCY-KEY', $params)) {
+    //         $headers['X-IDEMPOTENCY-KEY'] = $params['X-IDEMPOTENCY-KEY'];
+    //     }
+
+    //     if (array_key_exists('api-version', $params)) {
+    //         $headers['api-version'] = $params['api-version'];
+    //         unset($params['api-version']);
+    //     }
+
+    //     if (array_key_exists('X-API-VERSION', $params)) {
+    //         $headers['X-API-VERSION'] = $params['X-API-VERSION'];
+    //     }
+
+    //     $requestor = new \MCPhp\ApiRequestor();
+    //     return $requestor->request($method, $url, $params, $headers);
+    // }
+}

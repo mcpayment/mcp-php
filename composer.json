@@ -1,0 +1,29 @@
+{
+    "name": "mcpayment/mcp-php",
+    "description": "Official PHP package for MCPayment API",
+    "keywords":[
+        "mcpayment"
+    ],
+    "homepage": "https://github.com/mcpayment/mcp-php",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "php": ">=7.2.0",
+        "guzzlehttp/guzzle": "^7.0",
+        "ext-json": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "MCPhp\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "files": [
+            "helpers/helpers.php"
+        ]
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.5.13",
+        "vlucas/phpdotenv": "^5.4"
+    }
+}
