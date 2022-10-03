@@ -9,6 +9,7 @@ For more documentation available at [https://developer.mcpayment.id](https://dev
 ## 1. Installation
 
 Your application should meet minimum version of **PHP ≥ 7.2**.
+> :bangbang: This package not ready yet for production use :bangbang:
 
 If you are using [Composer](https://getcomposer.org), you can install via composer CLI:
 
