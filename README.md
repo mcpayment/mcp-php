@@ -39,10 +39,10 @@ See `.env.example` for your env settings reference on your app. Then set it up f
 ```
 use MCPhp\Mcp;
 
-Mcp::setApiEnv(env('MCP_ENV'));
-Mcp::setMerchantId(env('MCP_MERCHANT_INDEX'));
-Mcp::setSecretUnboundId(env('MCP_SECRET_UNBOUND_ID'));
-Mcp::setHashKey(env('MCP_HASH_KEY'));
+Mcp::setApiEnv(MCP_ENV);
+Mcp::setMerchantId(MCP_MERCHANT_INDEX);
+Mcp::setSecretUnboundId(MCP_SECRET_UNBOUND_ID);
+Mcp::setHashKey(MCP_HASH_KEY);
 Mcp::setHeaders($externalId, $orderId);
 ```
 
