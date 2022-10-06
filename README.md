@@ -82,8 +82,8 @@ VirtualAccounts::inquiry($headers, $params);
 ```
   
 
-  
-## 3. Example
+
+# 3. Example
 You can find the example at the [examples](https://github.com/mcpayment/mcp-php/tree/main/examples) folder
 > See [documentation](https://developer.mcpayment.id) for details about `headers` and `body` requests.
 
